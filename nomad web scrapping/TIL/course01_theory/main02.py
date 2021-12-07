@@ -10,3 +10,40 @@ def say_hello():
 
 # 함수 실행하기
 say_hello()
+
+
+
+
+
+print("==============================")
+print("1.5 <Function Arguments>")
+# 함수 안에 인자 넣기 
+def say_hello(who):
+    print("hello", who)
+
+say_hello("sun") # hello sun
+say_hello(True) # True
+
+# 계산기 함수 만들어보기
+def plus(a,b):
+    print(a+b)
+
+plus(3,4)
+
+def minus(a,b):
+    print(a-b)
+
+minus(5,2)
+# minus(5) --> 인자를 하나만 넣으면 에러가 난다. 
+
+# 인자를 하나만 넣어도 에러가 안나게 하는 방법 : 인자에 기본값을 설정해둔다.
+def divide(a,b=2):
+    print(a/b)
+
+divide(6)
+
+# 마찬가지로 앞서 만들었던 say_hello 함수에도 인자에 기본값을 설정해주면 함수 호출할 때 인자를 입력하지 않아도 에러가 나지 않고 기본값으로 출력이 된다.
+def say_hello2(name="anonymous"):
+    print("hello", name)
+
+say_hello2()
