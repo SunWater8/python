@@ -31,6 +31,9 @@ print(type(a_string))
 print(type(a_none))  #NoneType
 
 
+
+
+
 print("==============================")
 print("1.1 <Lists in Python>")
 
@@ -63,3 +66,47 @@ print(days)
 
 
 
+
+
+print("==============================")
+print("1.2 <Tuples and Dicts>")
+# tuples는 mutable sequence type이다. mutable은 내용이 바뀌지 않는다는 의미. list에서 했던 것들의 50%를 할 수 있다. 
+
+# 요일을 tuples 로 만드는 방식 : ( ) 괄호 사용.
+days2 =  ("Mon", "Tue", "Wed", "Thur", "Fri")
+print(days2)
+
+# days2의 타입을 확인해보기
+print(type(days2)) #tuples
+
+
+
+
+# Object와 비슷한 개념인 dictionary 만들어보기.
+name = "Sun"
+age = 33
+korean = True
+fav_food = ["Kimbap", "milk"]
+
+# 위의 변수들은 모여있지 않은 붕붕떠다니는 변수에 불과하다. 하지만 { } 괄호를 활용하면 하나로 묶을 수가 있다.
+sun = {
+    "name" : "sun",
+    "age" : 33,
+    "korean" : True,
+    "fav_food" : ["Kimbap", "milk"] #dictionary 안에 list 형태로 된 내용을 저장할 수도 있다.
+}
+
+print(sun)
+# sun 안의 내용 불러오기
+print(sun["name"])
+print(sun["age"])
+# sun 안에 내용 추가하기
+sun["smart"] = True
+print(sun)
+
+
+
+# dictionary 안에는 list와 tuples를 저장할 수 있다.
+# dictionary와 마찬가지로 list에도 다양한 data type을 저장할 수 있다.
+something = ["string", True, 11, None, False, "lslslsls"]
+print(something)
