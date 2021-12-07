@@ -77,3 +77,39 @@ r_result2 = r_plus2(2,4)
 print(r_result2) # 6 (return 아래에 적은 print는 실행되지 않는다. return는 function을 종료하는 기능을 가지고 있기 때문)
 
 
+
+
+
+
+
+
+print("==============================")
+print("1.7 <Keyworded Arguments>")
+# 키워드 인자
+# 위에서 적용된 인자는 position argument이다. 위치가 정해져 있는 인자라는 뜻이다.
+# def plus(a, b): 로 시작하는 함수에서 a, b가 이에 해당한다. plus(2,4)라고 함수를 호출할 때 함수 만들 때의 a와 숫자2는 한 쌍을 이루며 같은 자리에 위치해야 한다.
+# 반면 keyworded arguments라는 것도 존재한다. 위치가 정해져 있지 않은 대신에 이름으로 쌍이 이뤄져 있다.
+
+# position arguments 함수
+def plus2(a,b):
+    return a + b
+
+result2 = plus2(2,3)
+print(result2) # 5
+
+# keyworded arguments 함수
+def plus3(a,b):
+    return a + b
+
+result3 = plus3(b=30, a=1)
+print(result3) # 31
+
+# keyworded arguments 함수 응용 - arguments 가 많을 경우 keyworded arguments가 유용
+def say_hello3(name, age, country, fav_food):
+    return f"I am {name} and {age} years old. I am from {country}. I like {fav_food}"
+# String으로 return 할 경우 앞에 f를 써주어야 들어오는 data가 적용이 됨.
+
+hello = say_hello3(age="20", name="sun", fav_food="pizza", country="korea")
+
+print(hello)
+
