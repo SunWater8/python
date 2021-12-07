@@ -110,3 +110,23 @@ print(sun)
 # dictionary와 마찬가지로 list에도 다양한 data type을 저장할 수 있다.
 something = ["string", True, 11, None, False, "lslslsls"]
 print(something)
+
+
+
+
+print("==============================")
+print("1.3 <Built in Functions>")
+# 함수
+# 함수는 반복적인 행동을 수행한다. 게임을 할 때 space를 누르면 점프를 할 수 있는 기능을 갖게 하는 것처럼 하나의 기능을 반복해 사용하는데서 function의 의미를 찾을 수 있다.
+# print(), type() 와 같은 함수는 파이썬이 기본적으로 제공하는 함수이다.
+
+# len() : 길이를 알려줌
+print(len("dkfjseilfskdfjisef")) #18
+
+# str() : type을 바꿔 줌
+# 문자로 된 "18"을 정수인 18로 바꿔 보기
+age = "18"
+print(type(age)) # str
+n_age = int(age)
+print(n_age) # 18
+print(type(n_age)) # int
