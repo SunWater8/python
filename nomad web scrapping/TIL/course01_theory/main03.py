@@ -25,3 +25,34 @@ print(plus2(12, "10"))
 
 
 
+
+
+
+
+print("==============================")
+print("1.10 <if else and or>")
+# if else 문에서 and와 or 이용하기. & elif 이용 (elif는 else if와 같은 기능임)
+
+# 조건식 만들어 보기!!
+"""
+나이를 기준으로 음주 가능한지 출력하기.
+
+18세 이하 - you can't drink
+18세, 19세 - you are new to this!
+20세 이상 25세 이하 - you are still kind of young
+이외의 나이 - enjoy your drink
+"""
+
+def age_check(age):
+    print(f"you are {age}")
+    if age < 18:
+        print("you can't drink.")
+    elif age == 18 or age == 19:
+        print("you are new to this!")
+    elif age >= 20 and age <= 25: 
+        print("you are still kind of young")
+    else:
+        print("enjoy your drink")
+
+
+age_check(18)
