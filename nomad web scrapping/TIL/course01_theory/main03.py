@@ -60,10 +60,29 @@ age_check(18)
 
 print("==============================")
 print("1.11 <for in>")
-# 반복문 for
+# 반복문 for in
 
 # tuples에 있는 요소들을 각각 한 줄씩 출력하기.
 days = ("Mon", "Tue", "Wed", "Thu", "Fri")
 
 for potato in days:
     print(potato)
+    
+# potato라는 변수 안에 tuples인 days 의 요소들을 대입해서 출력하는 방식임.
+# potato라는 변수는 for in 문이 작동되기 시작하면서 생성된다.
+
+# 반복문을 중간에 중단시키고 싶을 때.
+# days를 for in 반복문을 통해서 출력하다가 Wed가 나오면 출력을 멈추게 하기.
+for day in days:
+    if day == "Wed":
+        break
+    else:
+        print(day)
+
+# for 문은 string, tuple, list에서 요소들을 반복해 출력하거나 할 때 사용할 수 있다.
+
+# string도 배열이라고 볼 수 있어서 for 문에 쓰이게 된다. (python standard library의 8.3.The for statement 참고)
+# sunlight 이라는 글자를 for in 문 이용해서 출력해보기
+for letter in "sunlight":
+    print(letter)
+
