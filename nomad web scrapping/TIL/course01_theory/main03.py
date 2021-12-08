@@ -56,3 +56,14 @@ def age_check(age):
 
 
 age_check(18)
+
+
+print("==============================")
+print("1.11 <for in>")
+# 반복문 for
+
+# tuples에 있는 요소들을 각각 한 줄씩 출력하기.
+days = ("Mon", "Tue", "Wed", "Thu", "Fri")
+
+for potato in days:
+    print(potato)
