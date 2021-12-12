@@ -88,3 +88,30 @@ for page in pages:
 
 print(spans[:-1]) # [0:-1]는 spans 배열에서 마지막 item을 지칭한다. 마지막 item은 '다음'을 표시한 것이라서 spans 배열에서 제외시킨다.
 # [<span class="pn">2</span>, <span class="pn">3</span>, <span class="pn">4</span>, <span class="pn">5</span>]
+
+
+
+# 정리해보기 (변수 이름 바꿈. spans->links, spans->pages, page->link)
+import requests
+from bs4 import BeautifulSoup
+
+indeed_result = requests.get("https://kr.indeed.com/jobs?q=python&limit=50")
+indeed_soup = BeautifulSoup(indeed_result.text, 'html.parser')
+pagination = indeed_soup.find("div", {"class":"pagination"})
+
+links = pagination.find_all('a')
+pages = []
+for link in links:
+    pages.append(link.find("span"))
+
+print(links)
+# 정리 끝
+
+
+print("==============================")
+print("2.4 Extracting Indeed Pages part Two")
+# span안의 text만 가지고 오기
+for link in links:
+    pages.append(link.find("span".string))
+
+print(links[:-1]) # 
