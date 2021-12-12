@@ -91,7 +91,7 @@ print(spans[:-1]) # [0:-1]는 spans 배열에서 마지막 item을 지칭한다.
 
 
 
-# 정리해보기 (변수 이름 바꿈. spans->links, spans->pages, page->link)
+# 코드 정리해보기 (변수 이름 바꿈. spans->links, spans->pages, page->link)
 import requests
 from bs4 import BeautifulSoup
 
@@ -104,14 +104,45 @@ pages = []
 for link in links:
     pages.append(link.find("span"))
 
-print(links)
-# 정리 끝
+print(pages[:-1])
+# 코드 정리 끝
 
 
 print("==============================")
 print("2.4 Extracting Indeed Pages part Two")
 # span안의 text만 가지고 오기
-for link in links:
-    pages.append(link.find("span".string))
+for link in links[:-1]: # pages배열에서 마지막 요소(item) 빼기
+    pages.append(link.find("span").string) 
+    # pages.append(link.string)  --> #span태그가 아닌 a 태그만 선택해도 똑같은 결과를 가져올 수 있다. 
 
-print(links[:-1]) # 
+print(pages) # ['2', '3', '4', '5']
+
+
+# pages 배열의 item들을 string에서 int로 변환해주기.
+for link in links[:-1]:
+    pages.append(int(link.string))
+
+print(pages) # [2, 3, 4, 5]
+
+# 페이지의 개수를 알아보기 pages배열에서 가장 큰 수를 찾기
+print(pages[-1]) # 5  --> pages배열에서 마지막 item을 조회하면 됨.
+# 마지막 페이지 숫자에 변수 만들어 주기
+max_page = pages[-1]
+
+
+
+# 코드 정리하기
+import requests
+from bs4 import BeautifulSoup
+
+indeed_result = requests.get("https://kr.indeed.com/jobs?q=python&limit=50")
+indeed_soup = BeautifulSoup(indeed_result.text, 'html.parser')
+pagination = indeed_soup.find("div", {"class":"pagination"})
+
+links = pagination.find_all('a')
+pages = []
+for link in links[:-1]:
+    pages.append(int(link.string))
+max_page = pages[-1]
+
+# 코드 정리 끝
