@@ -38,3 +38,53 @@ print(indeed_result) # <Response [200]>
 beautiful soup 은 html에서 정보를 추출하기에 정말 유용한 package(라이브러리)이다. 이 package를 사용하기 위해서는 repl.it에서 다운을 받으면 된다.
 (beautifulsoup4:screen scrapping library 라고 검색한 것을 다운받기)
 """
+
+
+
+print("==============================")
+print("2.3. Extracting Indeed Pages")
+# indeed 사이트의 검색결과에 대한 페이지를 배열로 추출하기.
+
+"""
+beautiful soup 사이트에서 Documentation 링크 클릭 --> Quick start의 두 번째 참고하기 (첫 번째는 html을 가져오는 거 먼저 했었음.)
+"""
+
+import requests
+from bs4 import BeautifulSoup #BeautifulSoup 라이브러리 가지고 오기.
+
+indeed_result = requests.get("https://kr.indeed.com/jobs?q=python&limit=50")
+
+# beautifulSoup을 위한 변수 만들기. 이 변수를 가지고 이제 필요한 정보(페이지, 제목이름 등)를 찾을 수 있다. (예: soup.title)
+indeed_soup = BeautifulSoup(indeed_result.text, 'html.parser') # beautifulSoup 사이트에서 quick start 두 번째 내용 참고. soup = BeautifulSoup(html_doc, 'html.parser') 라고 쓰여진 문장 참고.
+
+"""
+print(indeed_soup) # indeed의 검색결과에 대한 html을 모두 출력한다. 이 안에 페이지 html을  찾으면 됨.
+"""
+
+# <div class="pagination">라고 되어 있는 부분 안에 페이지 숫자가 들어 있기 때문에 이 div를 추출하도록 하기.
+pagination = indeed_soup.find("div", {"class":"pagination"})
+
+"""
+print(pagination) #pagination 클래스에 해당하는 html만 출력 됨.
+"""
+
+# pagination에서 이제 페이지를 가져오기 위해서 a태그만 추출하기.
+pages = pagination.find_all('a')
+
+"""
+print(pages)
+"""
+
+# 리스트를 만들어서 리스트에 있는 각 anchor의 span을 찾아보도록 하기.
+"""
+for page in pages:
+    print(page.find("span"))
+"""
+
+# 배열에다가 저장하기.
+spans = []
+for page in pages:
+    spans.append(page.find("span"))
+
+print(spans[:-1]) # [0:-1]는 spans 배열에서 마지막 item을 지칭한다. 마지막 item은 '다음'을 표시한 것이라서 spans 배열에서 제외시킨다.
+# [<span class="pn">2</span>, <span class="pn">3</span>, <span class="pn">4</span>, <span class="pn">5</span>]
