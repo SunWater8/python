@@ -1,3 +1,4 @@
+# /////////////////////////////////////////////////////////////////
 # 이전 수업 배웠던 내용
 import requests
 from bs4 import BeautifulSoup
@@ -35,7 +36,7 @@ start=100
 start=150
 start=2000
 """
-
+# /////////////////////////////////////////////////////////////////
 # 코드 정리하기.
 import requests
 from bs4 import BeautifulSoup
@@ -54,7 +55,7 @@ for n in range(max_page):
     print(f"start={n*50}")
 # 코드 정리 끝
 
-
+# /////////////////////////////////////////////////////////////////
 # 반복문 앞의 코드가 길고 반복적으로 쓰일 수 있으므로 함수로 만들어 indeed파일로 따로 이사시키기. 
 """
 # 함수로 만들면서 변경된 변수 이름 
@@ -68,6 +69,7 @@ max_indeed_pages = extract_indeed_pages()
 print(max_indeed_pages) # 5
 # 코드 정리 끝
 
+# /////////////////////////////////////////////////////////////////
 # 코드 정리하기
 from indeed import extract_indeed_pages, extract_indeed_jobs
 
