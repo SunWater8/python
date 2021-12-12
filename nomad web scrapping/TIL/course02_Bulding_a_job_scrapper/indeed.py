@@ -1,3 +1,6 @@
+print("==============================")
+print("2.5 Requesting Each Page ")
+
 # 코드 정리하기---------------------------
 import requests
 from bs4 import BeautifulSoup
@@ -53,6 +56,7 @@ def extract_indeed_jobs(last_page):
         result = requests.get(f"{URL}&start={page*LIMIT}")  
         # print(result.status_code) --> result.status_code 동작 실행하게 해줌.
 
+
 # /////////////////////////////////////////////////////////////////
 # [수정 2단계] 두 번째 함수 
 def extract_indeed_pages():
@@ -81,7 +85,8 @@ def extract_indeed_jobs(last_page):
     return jobs 
 
 
-
+print("==============================")
+print("2.6 Extracting Titles ")
 # 두 번째 함수 수정 - 반복문 사용해서 일자리 리스트 출력하기.
 def extract_indeed_jobs(last_page):
     jobs = []
