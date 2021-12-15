@@ -59,6 +59,13 @@ def extract_indeed_jobs(last_page):
 
 # /////////////////////////////////////////////////////////////////
 # [수정 2단계] 두 번째 함수 
+
+import requests
+from bs4 import BeautifulSoup
+
+LIMIT = 50
+URL = f"https://kr.indeed.com/jobs?q=python&limit={LIMIT}"
+
 def extract_indeed_pages():
     result = requests.get(URL) 
     soup = BeautifulSoup(result.text, 'html.parser')
@@ -107,6 +114,12 @@ def extract_indeed_jobs(last_page):
 
 # /////////////////////////////////////////////////////////////////
 # 코드 정리하기
+import requests
+from bs4 import BeautifulSoup
+
+LIMIT = 50
+URL = f"https://kr.indeed.com/jobs?q=python&limit={LIMIT}"
+
 def extract_indeed_pages():
     result = requests.get(URL) 
     soup = BeautifulSoup(result.text, 'html.parser')
