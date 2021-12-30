@@ -41,13 +41,13 @@ print("1.1 <Lists in Python>")
 
 # list는 sequence type 중 하나이다. 파이썬에는 열거형 타입이 두 가지 있다. 하나는 list, 다른 하나는 tuples (튜플) 이다.
 # list 는 mutable sequence type 이다.mutable은 내용이 바뀔 수 있다는 의미. s.append(x)처럼 배열에 값을 추가할 수 있다.
-# list와 다르게 tuples는 immutable 이다. 내가 값을 바꾸고 싶지 않을 때 immutable sequence에 넣어야 한다.
+# list와 다르게 tuples는 immutable 이다. 내가 값을 바꾸고 싶지 않을 때 immutable  equence에 넣어야 한다.
 
 # 요일 list 만드는 방식 : [ ] 괄호 사용.
 days = ["Mon", "Tue", "Wed", "Thur", "Fri"]
+print("Mon" in days)  #True
 
 # python standard library 에서 built in types 안에 list에 대해 적힌 기능처럼, x in s 를 적용해서 출력해보기
-print("Mon" in days)  #True
 
 # 이 list에서 3번째 요일 찾기
 get_third_day = days[2] #index는 0부터 시작하므로 3이 아닌 2를 넣어야 함.
@@ -82,7 +82,7 @@ print(type(days2)) #tuples
 
 
 
-# Object와 비슷한 개념인 dictionary 만들어보기.
+# javascript에서의 Object와 비슷한 개념인 dictionary 만들어보기.
 name = "Sun"
 age = 33
 korean = True
